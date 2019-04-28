@@ -11,4 +11,4 @@ for site in `ls -1 /etc/letsencrypt/live`; do
       | tee /usr/local/etc/haproxy/certs/haproxy-"$site".pem >/dev/null
 done
 
-haproxy -f /usr/local/etc/haproxy/haproxy.cfg
+haproxy -f /usr/local/etc/haproxy/haproxy.cfg -f /usr/local/etc/haproxy/haproxy-backend.cfg
